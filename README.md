@@ -169,5 +169,61 @@ echo $mhs1->getNim();
 echo "<br>";
 echo $mhs1->getJurusan();
 ```
+> Output
 
-![output 1.2](images/jb 1.2.png) 
+![output 1.2](images/jb1.2.png.png)  
+
+3. Inheritance
+   
+ _Inheritance_ atau pewarisan, adalah konsep dimana implementasinya adalah dengan adanya kelas baru yang dibuat dengan mewarisi atribut dan metode dari kelas _parent_ nya.
+
+> Membuat class Pengguna dengan atribut nama dan metode getNama()
+
+```PHP
+// Membuat class Pengguna
+class Pengguna
+{
+
+    //Atribut
+    protected $nama;
+
+    // Function construct
+    public function __construct($nama)
+    {
+        $this->nama = $nama;
+    }
+
+    // Method untuk getNama
+    public function getNama()
+    {
+        return $this->nama;
+    }
+}
+```
+> Membuat class Dosen yang mewarisi class Pengguna dan tambahkan atribut
+mataKuliah
+
+```PHP
+class Dosen extends Pengguna
+{
+    private $mataKuliah;
+
+    // Function construct
+    public function __construct($nama, $mataKuliah)
+    {
+        // Memanggil constructor dari class 'orang tua'
+        parent::__construct($nama);
+        $this->mataKuliah = $mataKuliah;
+    }
+
+    // Method Getter untuk mataKuliah
+    public function getMataKuliah()
+    {
+        return $this->mataKuliah;
+    }
+}
+```
+
+
+
+   
