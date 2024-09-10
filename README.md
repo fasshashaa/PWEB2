@@ -12,5 +12,50 @@ _Object-Oriented Programming_ atau Pemrograman berbasis Objek merupakan konsep p
 5. _Inheritance_ atau pewarisan, adalah konsep dimana implementasinya adalah dengan adanya kelas baru yang dibuat dengan mewarisi atribut dan metode dari kelas _parent_ nya.
 6. _Polymorphism_ atau Polimorfisme, adalah konsep kelas yang bertujuan untuk mempermudah implementasi program dengan cara menggunakan objek dari kelas yang berbeda tetapi menggunakan metode yang sama namun hasil implementasi nya berbeda.
 
-## Readme Modul 1 - 3
-1. [Readme Modul 1]( Readme Modul 1 )
+## Modul 1 
+### Jobsheet 1 : Implementasi Prinsip OOP dalam PHP
+1. Membuat Class dan Object  
+    _Class_ atau Kelas, adalah blueprint dasar dari pembuatan objek. Atribut dan metode yang ada pada objek akan didefinisikan oleh kelas. Sedangkan  _object_ atau objek, adalah instansiasi dari kelas. Umumnya objek memiliki elemen pelengkap berupa atribut dan metode.
+   
+   > Membuat class Mahasiswa dengan atribut nama, nim, dan jurusan  
+   ``` PHP
+   Class Mahasiswa {  
+   public $nama;
+   public $nim;
+   public $jurusan;
+   ```
+   Membuat function construct untuk mengembalikan nilai
+   ```PHP
+    public function __construct($nama, $nim, $jurusan){
+        $this->nama = $nama;
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    }
+   ```
+   > Membuat metode tampilkanData()
+   
+   Metode ini digunakan untuk memanggil atribut dan menampilkannya.
+   
+   ```PHP
+   function tampilkanData(){
+        return "Nama : $this->nama <br> NIM : $this->nim <br> Jurusan : $this->jurusan";
+    }
+   }
+   ```
+
+> Instansiasi objek dari class Mahasiswa dan tampilkan data mahasiswa tersebut.
+
+Instansiasi adalah cara untuk menghasilkan sebuah entitas konkrit berdasarkan blueprint (kelas) yang sudah ada.  
+
+```PHP
+$mhs1 = new Mahasiswa ("Fassha Fanny Purwanto", "230202035", "Komputer dan Bisnis");
+echo $mhs1->tampilkanData();
+```
+> Output
+
+<img src = "C:\xampp\htdocs\PWEB2\Modul 1 - Jobsheet 1\jb1.1.png/>
+
+
+   
+   
+   
