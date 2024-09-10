@@ -51,11 +51,83 @@ Instansiasi adalah cara untuk menghasilkan sebuah entitas konkrit berdasarkan bl
 $mhs1 = new Mahasiswa ("Fassha Fanny Purwanto", "230202035", "Komputer dan Bisnis");
 echo $mhs1->tampilkanData();
 ```
+> Full kode program
+```PHP
+<?php
+/*
+ Nama : Fassha Fanny Purwanto
+ Kelas : TI - 2B
+ NPM : 230202035 */
+
+//Membuat class Mahasiswa
+class Mahasiswa {
+
+    //Membuat atribut nama, nim, dan jurusan
+    public $nama;
+    public $nim;
+    public $jurusan;
+
+// Membuat construct
+    public function __construct($nama, $nim, $jurusan){
+        $this->nama = $nama;
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    }
+    //Membuat function tampilkanData()
+    public function tampilkanData(){
+        return "Nama : $this->nama <br> NIM : $this->nim <br> Jurusan : $this->jurusan";
+    }
+}
+//Instansiasi Objek
+$mhs1 = new Mahasiswa ("Fassha Fanny Purwanto", "230202035", "Komputer dan Bisnis");
+echo $mhs1->tampilkanData();
+?>
+```
 > Output
 
-![Ouput 1.1](images/jb1.1.png)
+![Ouput 1.1](images/jb1.1.png)  
 
+2. Encapsulation  
+   _Encapsulation_ atau enkapsulasi, adalah konsep yang memiliki fungsi untuk membungkus data dan metode. Enkapsulasi juga bertujuan untuk menyembunyikan detail implementasi.
 
-   
-   
+   > Ubah atribut dalam class Mahasiswa menjadi private.
+
+   ```PHP
+   class Mahasiswa{
+    private $nama;
+    private $nim;
+    private $jurusan;
+   ```
+
+Membuat function construct untuk inisialisasi  
+
+```PHP
+public function __construct($nama, $nim, $jurusan)
+    {
+        $this->nama = $nama;
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    }
+```
+
+>  Membuat metode getter dan setter untuk atribut nama, nim, dan jurusan
+    
+     ```PHP
+    public function getNama()
+    {
+        return "Nama : $this->nama";
+    }  
+ 
+    public function getNim()
+    {
+        return "NIM : $this->nim";
+    }  
+
+    public function getJurusan()
+    {
+        return "Jurusan : $this->jurusan";
+    } 
+```
+
+    
    
