@@ -14,6 +14,7 @@ _Object-Oriented Programming_ atau Pemrograman berbasis Objek merupakan konsep p
    
 ## DAFTAR ISI  
 1. [Modul 1 - Jobsheet 1](Modul%201%20-%20Jobsheet%201/)
+2. [Modul 2 - Jobsheet 2](Modul%202%20-%20Jobsheet%202/)
 
 
 
