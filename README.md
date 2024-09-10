@@ -304,6 +304,78 @@ echo "Fitur Dosen   : " . $dosen->aksesFitur() . "<br>";
 ```
 >Output
 
+![Output 1.4](images/jb1.4.png)  
+
+5. Abstraction
+
+_Abstraction_ atau abstraksi adalah konsep yang memiliki fungsi untuk menyederhanakan kode dengan cara menyembunyikan detail yang tidak perlu  
+
+>Membuat class abstrak Pengguna dengan metode abstrak aksesFitur()
+
+```PHP
+// Membuat class abstrak Pengguna
+abstract class Pengguna
+{
+    public function __construct() {}
+
+    //absract method aksesFitur
+    abstract public function aksesFitur();
+}
+```
+
+>Implementasikan class Mahasiswa dan Dosen yang mengimplementasikan
+metode abstrak tersebut
+
+Kelas Dosen yang mengimplementasikan metode absract aksesFitur  
+```PHP
+class Dosen extends Pengguna
+{
+
+    public function __construct() {}
+
+    // method aksesFitur pada kelas Dosen
+    public function aksesFitur()
+    {
+        return "Mengubah, Menambah, Menghapus, Melihat ";
+    }
+}
+```
+Kelas Mahasiswa yang mengimplementasikan metode abstract aksesFitur  
+```PHP
+class Mahasiswa extends Pengguna
+{
+
+
+    public function __construct() {}
+
+    // method aksesFitur pada kelas Mahasiswa
+    public function aksesFitur()
+    {
+        return "Melihat ";
+    }
+}
+```
+
+> Demonstrasikan dengan memanggil metode aksesFitur() dari objek yang
+diinstansiasi
+
+```PHP
+// Membuat objek Mahasiswa dan Dosen
+$mahasiswa = new Mahasiswa();
+$dosen = new Dosen();
+
+// Memanggil metode aksesFitur()
+echo "Fitur Mahasiswa: " . $mahasiswa->aksesFitur() . "<br>";
+echo "Fitur Dosen: " . $dosen->aksesFitur() . "<br>";
+```
+
+>Output
+
+
+
+
+
+
 
 
 
