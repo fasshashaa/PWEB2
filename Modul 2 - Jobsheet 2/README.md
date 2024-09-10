@@ -144,6 +144,49 @@ echo $mhs1->tampilkanData();
 ```
 >Output
 
+![Output 2.1](../images/jb2.1.png)  
+
+#### B. Tugas  
+
+> Implementasikan kelas Dosen dengan atribut nama, nip, dan mataKuliah
+
+```PHP
+class Dosen {
+    //atribut dosen
+    public $nama;
+    public $nip;
+    public $mataKuliah;
+```
+Membuat function Construct untuk inisialisasi  
+```PHP
+ public function __construct($nama, $nip, $mataKuliah) {
+        $this->nama = $nama;
+        $this->nip = $nip;
+        $this->mataKuliah = $mataKuliah;
+    }
+```
+> Membuat metode tampilkanDosen() untuk menampilkan informasi dosen
+
+```PHP
+public function tampilkanDosen(){
+        return "Nama    : " .$this->nama. "<br>NIP   : " .$this->nip. "<br>Mata Kuliah    : ".$this->mataKuliah;
+    }
+        
+    }
+    ```
+>Membuat objek dari kelas Dosen, dan gunakan metode tampilkanDosen() untuk
+menampilkan informasi tersebut
+
+```PHP
+ $dsn1 = new Dosen ("Ami Riyanti", "23478387463", "Kalkulus");
+    echo $dsn1->tampilkanDosen();
+   ```
+>Output
+
+
+
+   
+
 
 
 
