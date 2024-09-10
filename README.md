@@ -170,5 +170,4 @@ echo "<br>";
 echo $mhs1->getJurusan();
 ```
 
-    
-   
+![output 1.2](images/jb 1.2.png) 
