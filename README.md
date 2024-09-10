@@ -235,6 +235,77 @@ echo "Mata Kuliah : " . $dosen1->getMataKuliah();
 ```
 >Output
 
+![Output 1.3](images/jb1.3.png)
+
+4. Polymorphism
+
+_Polymorphism_ atau Polimorfisme, adalah konsep kelas yang bertujuan untuk mempermudah implementasi program dengan cara menggunakan objek dari kelas yang berbeda tetapi menggunakan metode yang sama namun hasil implementasi nya berbeda.  
+
+> Membuat class Pengguna dengan metode aksesFitur().
+
+```PHP
+class Pengguna
+{
+    //Function Construct
+    public function __construct() {}
+
+    // Method aksesFitur 
+    public function aksesFitur()
+    {
+        return  "Fitur Pengguna ";
+    }
+}
+```
+
+> Implementasikan aksesFitur() dengan cara berbeda di class Dosen dan
+Mahasiswa
+
+Mengimplementasikan metode aksesFitur di kelas Dosen
+```PHP
+class Dosen extends Pengguna
+{
+    public function __construct() {}
+
+    //Method aksesFitur() pada class Dosen
+    public function aksesFitur()
+    {
+        return "Melihat, Menambah, Menghapus, Mengubah ";
+    }
+}
+```
+Mengimplementasikan metode aksesFitur di kelas Mahasiswa  
+
+```PHP
+class Mahasiswa extends Pengguna
+{
+
+    public function __construct() {}
+
+    // Method aksesFitur pada class Mahasiswa
+    public function aksesFitur()
+    {
+        return "Melihat";
+    }
+}
+```
+> Instansiasi objek dari class Dosen dan Mahasiswa, lalu panggil metode
+aksesFitur()
+
+```PHP
+// Membuat objek Mahasiswa dan Dosen
+$mahasiswa = new Mahasiswa();
+$dosen = new Dosen();
+$pengguna = new pengguna();
+
+// Memanggil metode aksesFitur()
+echo $pengguna ->aksesFitur() ."<br>";
+echo "Fitur Mahasiswa   : " . $mahasiswa->aksesFitur() . "<br>";
+echo "Fitur Dosen   : " . $dosen->aksesFitur() . "<br>";
+```
+>Output
+
+
+
 
 
 
