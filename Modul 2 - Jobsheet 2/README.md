@@ -183,6 +183,7 @@ menampilkan informasi tersebut
    ```
 >Output
 
+![Output 2.2](../images/jb2.2.png)
 
 
    
