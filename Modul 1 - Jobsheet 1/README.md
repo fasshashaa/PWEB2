@@ -71,7 +71,7 @@ echo $mhs1->tampilkanData();
 ```
 > Output
 
-![Ouput 1.1](images/jb1.1.png)  
+![Ouput 1.1](../images/jb1.1.png)  
 
 2. Encapsulation  
    _Encapsulation_ atau enkapsulasi, adalah konsep yang memiliki fungsi untuk membungkus data dan metode. Enkapsulasi juga bertujuan untuk menyembunyikan detail implementasi.
@@ -251,7 +251,7 @@ echo $mhs1->getJurusan();
 
 > Output
 
-![output 1.2](images/jb1.2.png.png)  
+![output 1.2](../images/jb1.2.png.png)  
 
 3. Inheritance
    
@@ -373,7 +373,7 @@ echo "Mata Kuliah : " . $dosen1->getMataKuliah();
 
 >Output
 
-![Output 1.3](images/jb1.3.png)
+![Output 1.3](../images/jb1.3.png)
 
 4. Polymorphism
 
@@ -505,7 +505,7 @@ echo "Fitur Dosen   : " . $dosen->aksesFitur() . "<br>";
 
 >Output
 
-![Output 1.4](images/jb1.4.png)  
+![Output 1.4](../images/jb1.4.png)  
 
 5. Abstraction
 
@@ -628,7 +628,7 @@ echo "Fitur Dosen: " . $dosen->aksesFitur() . "<br>";
 
 >Output
 
-![Output 1.5](images/jb1.5.png)  
+![Output 1.5](../images/jb1.5.png)  
 
 
 
