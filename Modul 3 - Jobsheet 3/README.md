@@ -6,11 +6,10 @@
    > Membuat kelas Person dengan atribut name dan metode getName().
 
    ```PHP
-   <?php
-// membuat Kelas Person
-class Person {
-    protected $name;
-```
+   class Person {
+   protected $name;
+   ```
+
 Membuat function construct untuk menginisialisasi
 
 ```PHP
@@ -404,3 +403,72 @@ $offlinecourse1 =  new OfflineCourse("Biola", "Petrof House");
 
 ![Output 3.4](../images/jb3.4.png) 
 
+#### B. Tugas  
+1. Implementasikan kelas Person sebagai induk dari Dosen dan Mahasiswa
+
+```PHP
+abstract class Person {
+    protected $name;
+
+    public function __construct($name) {
+        $this->name = $name;
+    }
+
+```
+
+2. Gunakan konsep Inheritance untuk membuat hierarki kelas yang memungkinkan
+Dosen dan Mahasiswa memiliki atribut dan metode yang sesuai dengan perannya
+
+```PHP
+abstract class Person {
+    protected $name;
+
+    public function __construct($name) {
+        $this->name = $name;
+    }
+
+// Kelas Dosen yang mewarisi dari Person
+class Dosen extends Person {
+    private $nidn;
+
+    public function __construct($name, $nidn) {
+        parent::__construct($name);
+        $this->nidn = $nidn;
+    }
+}
+
+// Kelas Mahasiswa yang mewarisi dari Person
+class Mahasiswa extends Person {
+    private $nim;
+
+    public function __construct($name, $nim) {
+        parent::__construct($name);
+        $this->nim = $nim;
+}
+```
+
+3. Terapkan Polymorphism dengan membuat metode getRole() di kelas Person dan
+override metode ini di kelas Dosen dan Mahasiswa untuk menampilkan peran yang
+berbeda
+```PHP
+abstract public function getRole();
+}
+// Override metode getRole()
+    public function getRole() {
+        return "Dosen";
+    }
+ // Override metode getRole()
+    public function getRole() {
+        return "Mahasiswa";
+    }
+```
+
+4.  Gunakan Encapsulation untuk melindungi atribut nidn di kelas Dosen dan nim di
+kelas Mahasiswa
+
+```PHP
+class Dosen extends Person {
+    private $nidn;
+class Mahasiswa extends Person {
+    private $nim;
+```
