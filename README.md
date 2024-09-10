@@ -5,13 +5,13 @@ NPM     : 230202035
 
 ## Prinsip Dasar OOP
 _Object-Oriented Programming_ atau Pemrograman berbasis Objek merupakan konsep pemrograman yang menitik beratkan pada konsep objek. Dalam OOP, objek digunakan untuk menggambarkan masalah kedalam bentuk kode. OOP memiliki beberapa konsep utama atau konsep mendasar, diantara lain :  
-1. _object_ atau objek, adalah instansiasi dari kelas. Umumnya objek memiliki elemen pelengkap berupa atribut dan metode.
-2. _Class_ atau Kelas, adalah blueprint dasar dari pembuatan objek. Atribut dan metode yang ada pada objek akan didefinisikan oleh kelas.
-3. _Encapsulation_ atau enkapsulasi, adalah konsep yang memiliki fungsi untuk membungkus data dan metode. Enkapsulasi juga bertujuan untuk menyembunyikan detail implementasi.
-4. _Abstraction_ atau abstraksi adalah konsep yang memiliki fungsi untuk menyederhanakan kode dengan cara menyembunyikan detail yang tidak perlu.
-5. _Inheritance_ atau pewarisan, adalah konsep dimana implementasinya adalah dengan adanya kelas baru yang dibuat dengan mewarisi atribut dan metode dari kelas _parent_ nya.
-6. _Polymorphism_ atau Polimorfisme, adalah konsep kelas yang bertujuan untuk mempermudah implementasi program dengan cara menggunakan objek dari kelas yang berbeda tetapi menggunakan metode yang sama namun hasil implementasi nya berbeda.
-
+1. _Object_ atau objek
+2. _Class_ atau Kelas
+3. _Encapsulation_ atau enkapsulasi
+4. _Abstraction_ atau abstraksi 
+5. _Inheritance_ atau pewarisan
+6. _Polymorphism_ atau Polimorfisme
+   
 ## Modul 1 
 ### Jobsheet 1 : Implementasi Prinsip OOP dalam PHP
 1. Membuat Class dan Object  
@@ -169,6 +169,100 @@ echo $mhs1->getNim();
 echo "<br>";
 echo $mhs1->getJurusan();
 ```
+
+>Full kode program
+
+```PHP
+<?php
+/*
+ Nama : Fassha Fanny Purwanto
+ Kelas : TI - 2B
+ NPM : 230202035 */
+
+// Membuat class Mahasiswa
+class Mahasiswa
+{
+
+    // Membuat atribut private
+    private $nama;
+    private $nim;
+    private $jurusan;
+
+    // Constructor
+    public function __construct($nama, $nim, $jurusan)
+    {
+        $this->nama = $nama;
+        $this->nim = $nim;
+        $this->jurusan = $jurusan;
+    }
+
+    // Method Getter untuk nama
+    public function getNama()
+    {
+        return "Nama : $this->nama";
+    }
+
+    // Method Setter untuk nama
+    public function setNama($nama)
+    {
+        $this->nama = $nama;
+    }
+
+    // Method Getter untuk nim
+    public function getNim()
+    {
+        return "NIM : $this->nim";
+    }
+
+    // Method Setter untuk nim
+    public function setNim($nim)
+    {
+        $this->nim = $nim;
+    }
+
+    // Method Getter untuk jurusan
+    public function getJurusan()
+    {
+        return "Jurusan : $this->jurusan";
+    }
+
+    // Method Setter untuk jurusan
+    public function setJurusan($jurusan)
+    {
+        $this->jurusan = $jurusan;
+    }
+}
+
+// Instansiasi Objek
+$mhs1 = new Mahasiswa("Senantha", "230202035", "Komputer dan Bisnis");
+
+echo "Menampilkan data menggunakan getter";
+echo "<br>";
+
+// Mengakses data menggunakan metode getter
+echo $mhs1->getNama();
+echo "<br>";
+echo $mhs1->getNim();
+echo "<br>";
+echo $mhs1->getJurusan();
+echo "<br><br>";
+
+echo "Menampilkan data setelah menggunakan setter";
+echo "<br>";
+
+// Mengubah data menggunakan metode setter
+$mhs1->setNama("Fassha Fanny");
+$mhs1->setNim("230202036");
+$mhs1->setJurusan("Teknologi");
+
+// Menampilkan data setelah perubahan menggunakan getter
+echo $mhs1->getNama();
+echo "<br>";
+echo $mhs1->getNim();
+echo "<br>";
+echo $mhs1->getJurusan();
+```
+
 > Output
 
 ![output 1.2](images/jb1.2.png.png)  
@@ -233,6 +327,64 @@ $dosen1 = new Dosen("Ami Riyanti", "PWEB 3");
 echo "Nama Dosen  : " . $dosen1->getNama() . "<br>";
 echo "Mata Kuliah : " . $dosen1->getMataKuliah();
 ```
+
+>Full Kode Program
+
+```PHP
+<?php
+/*
+ Nama : Fassha Fanny Purwanto
+ Kelas : TI - 2B
+ NPM : 230202035 */
+
+// Membuat class Pengguna
+class Pengguna
+{
+
+    //Atribut
+    protected $nama;
+
+    // Function construct
+    public function __construct($nama)
+    {
+        $this->nama = $nama;
+    }
+
+    // Method untuk getNama
+    public function getNama()
+    {
+        return $this->nama;
+    }
+}
+
+// Membuat class Dosen yang mewarisi Pengguna
+class Dosen extends Pengguna
+{
+    private $mataKuliah;
+
+    // Function construct
+    public function __construct($nama, $mataKuliah)
+    {
+        // Memanggil constructor dari class 'orang tua'
+        parent::__construct($nama);
+        $this->mataKuliah = $mataKuliah;
+    }
+
+    // Method Getter untuk mataKuliah
+    public function getMataKuliah()
+    {
+        return $this->mataKuliah;
+    }
+}
+
+// Instansiasi objek dari class Dosen
+$dosen1 = new Dosen("Ami Riyanti", "PWEB 3");
+
+// Menampilkan data dosen
+echo "Nama Dosen  : " . $dosen1->getNama() . "<br>";
+echo "Mata Kuliah : " . $dosen1->getMataKuliah();
+```
+
 >Output
 
 ![Output 1.3](images/jb1.3.png)
@@ -302,6 +454,69 @@ echo $pengguna ->aksesFitur() ."<br>";
 echo "Fitur Mahasiswa   : " . $mahasiswa->aksesFitur() . "<br>";
 echo "Fitur Dosen   : " . $dosen->aksesFitur() . "<br>";
 ```
+
+>Full Kode Program
+
+```PHP
+<?php
+/*
+ Nama : Fassha Fanny Purwanto
+ Kelas : TI - 2B
+ NPM : 230202035 */
+
+
+// Membuat class Pengguna
+class Pengguna
+{
+    //Function Construct
+    public function __construct() {
+        
+    }
+
+    // Method aksesFitur 
+    public function aksesFitur()
+    {
+        return  "Fitur Pengguna ";
+    }
+}
+
+// Membuat class Dosen yang mewarisi Pengguna
+class Dosen extends Pengguna
+{
+    public function __construct() {}
+
+    //Method aksesFitur() pada class Dosen
+    public function aksesFitur()
+    {
+        return "Melihat, Menambah, Menghapus, Mengubah ";
+    }
+}
+
+// Membuat class Mahasiswa yang mewarisi Pengguna
+class Mahasiswa extends Pengguna
+{
+
+    public function __construct() {}
+
+    // Method aksesFitur pada class Mahasiswa
+    public function aksesFitur()
+    {
+        return "Melihat";
+    }
+}
+
+// Membuat objek Mahasiswa dan Dosen
+$mahasiswa = new Mahasiswa();
+$dosen = new Dosen();
+$pengguna = new pengguna();
+
+// Memanggil metode aksesFitur()
+echo $pengguna ->aksesFitur() ."<br>";
+echo "Fitur Mahasiswa   : " . $mahasiswa->aksesFitur() . "<br>";
+echo "Fitur Dosen   : " . $dosen->aksesFitur() . "<br>";
+```
+
+
 >Output
 
 ![Output 1.4](images/jb1.4.png)  
@@ -368,8 +583,66 @@ $dosen = new Dosen();
 echo "Fitur Mahasiswa: " . $mahasiswa->aksesFitur() . "<br>";
 echo "Fitur Dosen: " . $dosen->aksesFitur() . "<br>";
 ```
+>Full Kode Program
+
+```PHP
+<?php
+/*
+ Nama : Fassha Fanny Purwanto
+ Kelas : TI - 2B
+ NPM : 230202035 */
+
+// Membuat class abstrak Pengguna
+abstract class Pengguna
+{
+    public function __construct() {}
+
+    //absract method aksesFitur
+    abstract public function aksesFitur();
+}
+
+// Membuat class Dosen yang mewarisi Pengguna
+class Dosen extends Pengguna
+{
+
+    public function __construct() {}
+
+    // method aksesFitur pada kelas Dosen
+    public function aksesFitur()
+    {
+        return "Mengubah, Menambah, Menghapus, Melihat ";
+    }
+}
+
+// Membuat class Mahasiswa yang mewarisi Pengguna
+class Mahasiswa extends Pengguna
+{
+
+
+    public function __construct() {}
+
+    // method aksesFitur pada kelas Mahasiswa
+    public function aksesFitur()
+    {
+        return "Melihat ";
+    }
+}
+
+
+// Membuat objek Mahasiswa dan Dosen
+$mahasiswa = new Mahasiswa();
+$dosen = new Dosen();
+
+// Memanggil metode aksesFitur()
+echo "Fitur Mahasiswa: " . $mahasiswa->aksesFitur() . "<br>";
+echo "Fitur Dosen: " . $dosen->aksesFitur() . "<br>";
+?>
+```
+
 
 >Output
+
+![Output 1.5](images/jb1.5.png)  
 
 
 
