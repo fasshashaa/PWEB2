@@ -223,6 +223,20 @@ class Dosen extends Pengguna
     }
 }
 ```
+> Instansiasi objek dari class Dosen dan tampilkan data dosen
+
+```PHP
+// Instansiasi objek dari class Dosen
+$dosen1 = new Dosen("Ami Riyanti", "PWEB 3");
+
+// Menampilkan data dosen
+echo "Nama Dosen  : " . $dosen1->getNama() . "<br>";
+echo "Mata Kuliah : " . $dosen1->getMataKuliah();
+```
+>Output
+
+
+
 
 
 
