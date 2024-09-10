@@ -13,7 +13,7 @@ _Object-Oriented Programming_ atau Pemrograman berbasis Objek merupakan konsep p
 6. _Polymorphism_ atau Polimorfisme
    
 ## DAFTAR ISI  
-1. [Jobsheet 1](Modul%201%20-%20Jobsheet%201/)
+1. [Modul 1 - Jobsheet 1](Modul%201%20-%20Jobsheet%201/)
 
 
 
