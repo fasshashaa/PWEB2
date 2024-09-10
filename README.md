@@ -111,22 +111,63 @@ public function __construct($nama, $nim, $jurusan)
 ```
 
 >  Membuat metode getter dan setter untuk atribut nama, nim, dan jurusan
-    
-     ```PHP
-    public function getNama()
-    {
-        return "Nama : $this->nama";
-    }  
- 
-    public function getNim()
-    {
-        return "NIM : $this->nim";
-    }  
 
-    public function getJurusan()
-    {
-        return "Jurusan : $this->jurusan";
-    } 
+Getter adalah metode yang digunakan untuk mengambil nilai dari atribut private. Biasanya, getter memberikan akses hanya-baca (read-only) ke atribut dari luar kelas.
+    
+ ```PHP
+public function getNama() {
+return "Nama    : $this->nama";
+}
+public function getNim() {
+return "NIM    : $this->nim";
+}
+public function getJurusan() {
+return "Jurusan    : $this->jurusan";
+}
+```
+Setter adalah metode yang digunakan untuk memodifikasi nilai dari atribut private. Setter memungkinkan akses tulis (write) ke atribut dari luar kelas dengan memberikan validasi atau aturan khusus jika diperlukan.  
+```PHP
+public function setNama($nama) {
+$this->nama = $nama;
+}
+public function setNim ($nim) {
+$this->nim = $nim;
+}
+public function setJurusan ($jurusan) {
+$this->jurusan = $jurusan;
+}
+```
+> Demonstrasikan akses ke atribut menggunakan metode getter dan setter
+
+```PHP
+// Instansiasi Objek
+$mhs1 = new Mahasiswa("Senantha", "230202035", "Komputer dan Bisnis");
+
+echo "Menampilkan data menggunakan getter";
+echo "<br>";
+
+// Mengakses data menggunakan metode getter
+echo $mhs1->getNama();
+echo "<br>";
+echo $mhs1->getNim();
+echo "<br>";
+echo $mhs1->getJurusan();
+echo "<br><br>";
+
+echo "Menampilkan data setelah menggunakan setter";
+echo "<br>";
+
+// Mengubah data menggunakan metode setter
+$mhs1->setNama("Fassha Fanny");
+$mhs1->setNim("230202036");
+$mhs1->setJurusan("Teknologi");
+
+// Menampilkan data setelah perubahan menggunakan getter
+echo $mhs1->getNama();
+echo "<br>";
+echo $mhs1->getNim();
+echo "<br>";
+echo $mhs1->getJurusan();
 ```
 
     
