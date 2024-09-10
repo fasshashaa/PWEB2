@@ -53,7 +53,7 @@ echo $mhs1->tampilkanData();
 ```
 > Output
 
-<img src = "C:\xampp\htdocs\PWEB2\Modul 1 - Jobsheet 1\jb1.1.png/>
+![Ouput 1.1](images/jb1.1.png)
 
 
    
