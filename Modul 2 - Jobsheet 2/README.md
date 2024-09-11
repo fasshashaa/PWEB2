@@ -9,9 +9,9 @@ Potongan program dibawah menunjukan sebuah class yang memiliki atribut nama, nim
 
 ```PHP
 class Mahasiswa {
-    private $nama;
-    private $nim;
-    private $jurusan;
+    public $nama;
+    public $nim;
+    public $jurusan;
 ```
 
 > Membuat metode tampilkanData() dalam class Mahasiswa
@@ -97,9 +97,9 @@ echo $mhs1->tampilkanData();
 <?php
 //Buat class Mahasiswa yang memiliki atribut nama, nim, dan jurusan.
 class Mahasiswa {
-    private $nama;
-    private $nim;
-    private $jurusan;
+    public $nama;
+    public $nim;
+    public $jurusan;
 
     //Tambahkan constructor pada kelas Mahasiswa
     public function __construct($nama, $nim, $jurusan) {
@@ -148,7 +148,7 @@ echo $mhs1->tampilkanData();
 ```
 >Output
 
-![Output 2.1](../images/jb2.1.png)  
+![Output 2.1](../images/jbr2.1.png)  
 
 #### B. Tugas  
 
@@ -162,15 +162,7 @@ class Dosen {
     public $nip;
     public $mataKuliah;
 ```
-Membuat function Construct untuk inisialisasi atau menentukan nilai awal  
 
-```PHP
- public function __construct($nama, $nip, $mataKuliah) {
-        $this->nama = $nama;
-        $this->nip = $nip;
-        $this->mataKuliah = $mataKuliah;
-    }
-```
 > Membuat metode tampilkanDosen() untuk menampilkan informasi dosen
 
 ```PHP
@@ -178,14 +170,22 @@ public function tampilkanDosen(){
         return "Nama    : " .$this->nama. "<br>NIP   : " .$this->nip. "<br>Mata Kuliah    : ".$this->mataKuliah;
     }
          }
-    ```
->Membuat objek dari kelas Dosen, dan gunakan metode tampilkanDosen() untuk
+```
+
+> Membuat objek dari kelas Dosen, dan gunakan metode tampilkanDosen() untuk
 menampilkan informasi tersebut
+
+
 Objek kelas dosen di implementasikan dengan dsn1 dan untuk menampilkan informasi menggunakan metode tampilkanDosen dengan perintah echo.
 
 
 ```PHP
- $dsn1 = new Dosen ("Ami Riyanti", "23478387463", "Kalkulus");
+//Instansiasi Objek
+    $dsn1 = new Dosen ("Ami Riyanti", "23478387463", "Kalkulus");
+    $dsn1->nama = "Ami Riyanti";    
+    $dsn1->nip = "23029309";    
+    $dsn1->mataKuliah = "Kriptografi";    
+
     echo $dsn1->tampilkanDosen();
    ```
 
@@ -200,28 +200,26 @@ class Dosen {
     public $nip;
     public $mataKuliah;
 
-    //function construct
-    public function __construct($nama, $nip, $mataKuliah) {
-        $this->nama = $nama;
-        $this->nip = $nip;
-        $this->mataKuliah = $mataKuliah;
-    }
-    
     //method tampilkanDosen
     public function tampilkanDosen(){
         return "Nama    : " .$this->nama. "<br>NIP   : " .$this->nip. "<br>Mata Kuliah    : ".$this->mataKuliah;
     }
         
     }
-    
+   
+    //Instansiasi Objek
     $dsn1 = new Dosen ("Ami Riyanti", "23478387463", "Kalkulus");
+    $dsn1->nama = "Ami Riyanti";    
+    $dsn1->nip = "23029309";    
+    $dsn1->mataKuliah = "Kriptografi";    
+
     echo $dsn1->tampilkanDosen();
     ?>
 ```
 
 >Output
 
-![Output 2.2](../images/jb2.2.png)
+![Output 2.2](../images/jbr2.2.png)
 
 
    
