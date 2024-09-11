@@ -103,7 +103,7 @@ echo "<br>";
 > Membuat kelas Teacher yang juga mewarisi dari Person dan tambahkan atribut
 teacherID
 
-Potongan program dibawah memiliki kelas turunan dari person yang  ernama class Teacher dengan atribut dan metode class Person yang diturunkan  
+Potongan program dibawah memiliki kelas turunan dari person yang  bernama class Teacher dengan atribut dan metode class Person yang diturunkan  
 
 ```PHP
 class Teacher extends Person {
