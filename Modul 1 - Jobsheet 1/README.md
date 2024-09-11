@@ -1,4 +1,4 @@
-## Modul 1 
+## MODUL 1 
 ### Jobsheet 1 : Implementasi Prinsip OOP dalam PHP
 1. Membuat Class dan Object  
     _Class_ atau Kelas, adalah blueprint dasar dari pembuatan objek. Atribut dan metode yang ada pada objek akan didefinisikan oleh kelas. Sedangkan  _object_ atau objek, adalah instansiasi dari kelas. Umumnya objek memiliki elemen pelengkap berupa atribut dan metode.
