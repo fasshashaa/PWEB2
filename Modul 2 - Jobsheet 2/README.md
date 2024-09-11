@@ -148,7 +148,7 @@ echo $mhs1->tampilkanData();
 ```
 >Output
 
-![Output 2.1](../images/jbr2.1.png)  
+![Output 2.1](../images/jbr2.2.png)  
 
 #### B. Tugas  
 
@@ -219,7 +219,7 @@ class Dosen {
 
 >Output
 
-![Output 2.2](../images/jbr2.2.png)
+![Output 2.2](../images/jbr2.1.png)
 
 
    
