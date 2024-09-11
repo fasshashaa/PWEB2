@@ -1,4 +1,4 @@
-## Modul 2
+## MODUL 2
 ### Jobsheet 2 : Menggunakan Konsep Kelas dan Objek dalam PHP  
 #### A. Jobsheet 2
 1. Membuat Class dan Object
