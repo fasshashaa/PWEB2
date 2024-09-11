@@ -186,7 +186,7 @@ Objek kelas dosen di implementasikan dengan dsn1 dan untuk menampilkan informasi
     $dsn1->nip = "23029309";    
     $dsn1->mataKuliah = "Kriptografi";    
 
-    echo $dsn1->tampilkanDosen();
+    echo $dsn1->tampilkanDosen(); 
    ```
 
 >Full Kode Program
