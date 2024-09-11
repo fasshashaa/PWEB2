@@ -9,7 +9,7 @@ Potongan Program dibawah memiliki kelas dengan nama Person dan atribut name. Pro
 
    ```PHP
    class Person {
-   protected $name;
+   public $name;
 
 public function getName() {
         return $this->name;
@@ -17,25 +17,12 @@ public function getName() {
 }
    ```
 
-Membuat function construct untuk menginisialisasi atau menentukan nilai awal  
-
-
-```PHP
-public function __construct($name) {
-        $this->name = $name;
-    }
-```
 >Membuat kelas Student yang mewarisi dari Person dan tambahkan atribut studentID
 serta metode getStudentID()
 
 ```PHP
 class student extends Person {
-    private $studentID;
-
-    public function __construct($name, $studentID) {
-        parent::__construct($name);
-        $this->studentID = $studentID;
-    }
+    public $studentID;
 
     //membuat method getStudentID
     public function getStudentID() {
@@ -49,11 +36,12 @@ class student extends Person {
 
 
 ```PHP
-$student = new Student("Fassha Fanny Purwanto", "8374657");
-echo "Name   : ". $student->getName(); 
+$student = new Student();
+echo "Nama : ". $student->name = "Fassha Fanny Purwanto"; 
 echo"<br>";
-echo "Student ID    : ". $student->getStudentID(); 
+echo "Student ID : ". $student->studentID = "274837264";
 echo "<br>";
+?>
 ```
 >Full kode Program
 
@@ -61,11 +49,7 @@ echo "<br>";
 <?php
 // membuat Kelas Person
 class Person {
-    protected $name;
-
-    public function __construct($name) {
-        $this->name = $name;
-    }
+    public $name;
 
     //membuat method getName
     public function getName() {
@@ -75,28 +59,24 @@ class Person {
 
 
 // membuat class Student yang mewarisi Person
-class student extends Person {
-    private $studentID;
-
-    public function __construct($name, $studentID) {
-        parent::__construct($name);
-        $this->studentID = $studentID;
-    }
+class Student extends Person {
+    public $studentID;
 
     //membuat method getStudentID
     public function getStudentID() {
         return $this->studentID;
     }
 }
-$student = new Student("Fassha Fanny Purwanto", "8374657");
-echo "Name   : ". $student->getName(); 
+$student = new Student();
+echo "Nama : ". $student->name = "Fassha Fanny Purwanto"; 
 echo"<br>";
-echo "Student ID    : ". $student->getStudentID(); 
+echo "Student ID : ". $student->studentID = "274837264";
 echo "<br>";
+?>
 ```
 >Output
 
-![Output 3.1](../images/jb3.1.png)  
+![Output 3.1](../images/jbr3.1.png)  
 
 2. Polymorphism
 
@@ -107,12 +87,7 @@ Potongan program dibawah memiliki kelas turunan dari person yang  bernama class 
 
 ```PHP
 class Teacher extends Person {
-    private $teacherID;
-
-    public function __construct($name, $teacherID) {
-        parent::__construct($name);
-        $this->teacherID = $teacherID;
-    }
+    public $teacherID;
 
     public function getTeacherID() {
         return $this->teacherID;
@@ -128,20 +103,19 @@ Override adalah mekanisme untuk menggantikan implementasi metode yang diwarisi d
 public function getName() {
         return "Teacher Name : " . $this->name;
     }
+// Override metode getName()
+    public function getName() {
+        return "Student : " . $this->name;
+    }
 }
 ```
 > Full kode program
 
 ```PHP
-
 <?php
 // membuat Kelas Person
 class Person {
-    protected $name;
-
-    public function __construct($name) {
-        $this->name = $name;
-    }
+    public $name;
 
     //membuat method getName
     public function getName() {
@@ -152,26 +126,21 @@ class Person {
 
 // membuat class Student yang mewarisi Person
 class Student extends Person {
-    private $studentID;
-
-    public function __construct($name, $studentID) {
-        parent::__construct($name);
-        $this->studentID = $studentID;
-    }
+    public $studentID;
 
     //membuat method getStudentID
     public function getStudentID() {
         return $this->studentID;
     }
+    
+    // Override metode getName()
+    public function getName() {
+        return "Student : " . $this->name;
+    }
 }
 // Kelas Teacher yang mewarisi dari Person
 class Teacher extends Person {
-    private $teacherID;
-
-    public function __construct($name, $teacherID) {
-        parent::__construct($name);
-        $this->teacherID = $teacherID;
-    }
+    public $teacherID;
 
     public function getTeacherID() {
         return $this->teacherID;
@@ -179,22 +148,23 @@ class Teacher extends Person {
 
     // Override metode getName()
     public function getName() {
-        return "Teacher Name : " . $this->name;
+        return "Teacher: " . $this->name;
     }
 }
 
-$student1 = new student("Fassha Fanny Purwanto", "230202035");
-$teacher1 = new teacher("Dimas Muh. Marzuki", "230209007");
+$student1 = new student();
+$teacher1 = new teacher();
 
-echo $student1->getName(). "<br>";
-echo "Student ID : ".$student1->getStudentID(). "<br><br>";
-echo $teacher1 -> getName(). "<br>";
-echo "Teacher ID : ". $teacher1->getTeacherID()."<br>";
+echo "Nama student : " .$student1->name = "Fassha Fanny Purwanto". "<br>";
+echo "Student ID : ".$student1->studentID = "230202035". "<br><br>";
+echo "Nama Teacher : ". $teacher1 ->name = "Dimas M.M". "<br>";
+echo "Teacher ID : ". $teacher1->teacherID = "230209007". "<br>";
 ?>
+
 ```
 >Output
 
-![Output 3.2](../images/jb3.2.png)  
+![Output 3.2](../images/jbr3.2.png)  
 
 3. Encapsulation
 
@@ -205,16 +175,16 @@ Mengubah atribut name menjadi private. Anggota kelas yang dideklarasikan sebagai
 
 
 ```PHP
- public function getNamePrivate() {
-        return $this->name;
+public function getNamePrivate() {
+        return "Nama Student : ". $this->name;
     }
 ```
 
 Mengubah atribut studentID menjadi private  
 ```PHP
 public function getStudentIDPrivate() {
-        return $this->studentID;
-    }
+        return "Student ID : ". $this->studentID;
+    
 ```
 >Tambahkan metode setter dan getter untuk mengakses dan mengubah nilai
 atribut name dan studentID
@@ -247,11 +217,7 @@ Membuat metode getter untuk mengakses nilai
 <?php
 // membuat Kelas Person
 class Person {
-    protected $name;
-
-    public function __construct($name) {
-        $this->name = $name;
-    }
+    public $name;
 
     //membuat method getName
     public function getName() {
@@ -264,11 +230,6 @@ class Person {
 class Student extends Person {
     private $studentID;
 
-    public function __construct($name, $studentID) {
-        parent::__construct($name);
-        $this->studentID = $studentID;
-    }
-
     //membuat method getStudentID
     public function getStudentID() {
         return $this->studentID;
@@ -276,12 +237,12 @@ class Student extends Person {
 
     // Override metode getName()
     public function getName() {
-        return "Student Name: " . $this->name;
+        return "Nama Student : " . $this->name;
     }
 
     // Getter dan Setter untuk atribut name
     public function getNamePrivate() {
-        return $this->name;
+        return "Nama Student : ". $this->name;
     }
 
     public function setName($name) {
@@ -290,7 +251,7 @@ class Student extends Person {
 
     // Getter dan Setter untuk atribut studentID
     public function getStudentIDPrivate() {
-        return $this->studentID;
+        return "Student ID : ". $this->studentID;
     }
 
     public function setStudentID($studentID) {
@@ -298,12 +259,14 @@ class Student extends Person {
     }
 }
 
-$student1 = new student ("Fassha Fanny Purwanto", "230202035");
-echo $student1->getName(). "<br>";
-echo "Student ID : ".$student1->getStudentID(). "<br><br>";
+$student1 = new student ();
+$student1->setStudentID("202300900");
+$student1->setName("Desta");
+echo $student1->getNamePrivate(). "<br>";
+echo $student1->getStudentIDPrivate().  "<br><br>";
 
-$student1->setStudentID("202398392");
-$student1->setName("Dimas M.M");
+$student1->setStudentID("2023983002");
+$student1->setName("Fassha Fanny ");
 //menampilkan data setelah update menggunakan set
 echo "Data Terbaru";
 echo "<br>";
@@ -313,7 +276,7 @@ echo "Student ID : ".$student1->getStudentID(). "<br><br>";
 ```
 > Output
 
-![Output 3.3](../images/jb3.3.png)  
+![Output 3.3](../images/jbr3.3.png)  
 
 4. Abstraction
 
@@ -337,14 +300,17 @@ class OnlineCourse extends Course {
 private $nama;
     private $media;
 
-    public function __construct($nama, $media){
-        $this->nama = $nama;
-        $this->media = $media;
-    }
+   public function setNama($nama) {
+    $this->nama = $nama;
+   }
+   public function setMedia($media) {
+    $this->media = $media;
+   }
     public function getCourseDetails() {
         return "Online course : ".$this->nama. "<br>" ."Media : ".$this->media;
     }
 }
+
 ```
 
 Membuat class OfflineCourse yang merupakan kelas turunan dari class Course  
@@ -355,10 +321,14 @@ class OfflineCourse extends Course {
     private $nama;
     private $lokasi;
 
-    public function __construct($nama, $lokasi){
+    public function setNama($nama) {
         $this->nama = $nama;
+       }
+
+       public function setLokasi($lokasi) {
         $this->lokasi = $lokasi;
-    }
+       }
+
     public function getCourseDetails() {
         return "Offline course : ". $this->nama."<br>". "Lokasi : " .$this->lokasi;
     }
@@ -370,7 +340,6 @@ class OfflineCourse extends Course {
 <?php
 // Kelas abstrak Course
 abstract class Course {
-
     abstract public function getCourseDetails();
 }
 
@@ -379,10 +348,12 @@ class OnlineCourse extends Course {
 private $nama;
     private $media;
 
-    public function __construct($nama, $media){
-        $this->nama = $nama;
-        $this->media = $media;
-    }
+   public function setNama($nama) {
+    $this->nama = $nama;
+   }
+   public function setMedia($media) {
+    $this->media = $media;
+   }
     public function getCourseDetails() {
         return "Online course : ".$this->nama. "<br>" ."Media : ".$this->media;
     }
@@ -393,26 +364,44 @@ class OfflineCourse extends Course {
     private $nama;
     private $lokasi;
 
-    public function __construct($nama, $lokasi){
+    public function setNama($nama) {
         $this->nama = $nama;
+
+       }
+
+       public function setLokasi($lokasi) {
         $this->lokasi = $lokasi;
-    }
+       }
+
     public function getCourseDetails() {
         return "Offline course : ". $this->nama."<br>". "Lokasi : " .$this->lokasi;
     }
 }
 
-$onlinecourse1 =  new OnlineCourse("Musik Piano", "Gmeet");
-$offlinecourse1 =  new OfflineCourse("Biola", "Petrof House");
+$onlinecourse1 =  new OnlineCourse();
+$offlinecourse1 =  new OfflineCourse();
 
- echo $onlinecourse1->getCourseDetails(). "<br>";
- echo $offlinecourse1->getCourseDetails(). "<br>";
- ?>  
+// Mengatur detail kursus untuk OnlineCourse
+$onlinecourse1->setNama("Music Practice");
+$onlinecourse1->setMedia("GMeet");
+
+
+// Mengatur detail kursus untuk OfflineCourse
+$offlinecourse1->setNama("Piano Practice");
+$offlinecourse1->setLokasi("Petrof Piano House");
+
+
+// Menampilkan detail kursus
+echo $onlinecourse1->getCourseDetails(); 
+echo "<br>";
+echo "<br>";
+echo $offlinecourse1->getCourseDetails();
+?>
  ```
 
 > Output
 
-![Output 3.4](../images/jb3.4.png) 
+![Output 3.4](../images/jbr3.4.png) 
 
 #### B. Tugas  
 1. Implementasikan kelas Person sebagai induk dari Dosen dan Mahasiswa
@@ -423,9 +412,11 @@ $offlinecourse1 =  new OfflineCourse("Biola", "Petrof House");
 ```PHP
 abstract class Person {
     protected $name;
-
-    public function __construct($name) {
-        $this->name = $name;
+ public function getName() {
+        return $this->name;
+    }
+    public function setName($name) {
+        return $this->name = $name;
     }
 
 ```
@@ -434,23 +425,33 @@ abstract class Person {
 Dosen dan Mahasiswa memiliki atribut dan metode yang sesuai dengan perannya
 
 ```PHP
-// Kelas Dosen yang mewarisi dari Person
 class Dosen extends Person {
     private $nidn;
 
-    public function __construct($name, $nidn) {
-        parent::__construct($name);
+    // Getter dan Setter untuk atribut nidn
+    public function getNidn() {
+        return $this->nidn;
+    }
+
+    public function setNidn($nidn) {
         $this->nidn = $nidn;
     }
+
 }
 
 // Kelas Mahasiswa yang mewarisi dari Person
 class Mahasiswa extends Person {
     private $nim;
 
-    public function __construct($name, $nim) {
-        parent::__construct($name);
+    // Getter dan Setter untuk atribut nim
+    public function getNim() {
+        return $this->nim;
+    }
+
+    public function setNim($nim) {
         $this->nim = $nim;
+    }
+
 }
 ```
 
@@ -495,36 +496,25 @@ memiliki cara tersendiri untuk mengelola pengajuan jurnal
 
 ```PHP
 abstract class Jurnal {
-    protected $judul;
-
-    public function  __construct($judul)
-    {
-        $this->judul = $judul;
-    }
 
     abstract public function Submission();
 }
 
 // Kelas JurnalDosen yang mengimplementasikan Jurnal
 class JurnalDosen extends Jurnal {
-    public function __construct($judul)
-    {
-        parent ::__construct($judul);
-    }
+    
     public function Submission() {
-        return "Pengajuan jurnal dengan judul $this->judul";
+        return "Pengajuan Jurnal dan penilitian Dosen";
     }
 }
 
+
 // Kelas JurnalMahasiswa yang mengimplementasikan Jurnal
 class JurnalMahasiswa extends Jurnal {
-    public function __construct($judul)
-    {
-        parent ::__construct($judul);
-    }
+   
     public function Submission()
     {
-        return "Pengajuan jurnal dengan judul $this->judul";
+        return "Pengajuan jurnal Mahasiswa";
     }
 }
 ```
@@ -536,12 +526,11 @@ class JurnalMahasiswa extends Jurnal {
 abstract class Person {
     protected $name;
 
-    public function __construct($name) {
-        $this->name = $name;
-    }
-
     public function getName() {
         return $this->name;
+    }
+    public function setName($name) {
+        return $this->name = $name;
     }
 
     // Metode abstrak yang akan di-override oleh kelas turunannya
@@ -551,11 +540,6 @@ abstract class Person {
 // Kelas Dosen yang mewarisi dari Person
 class Dosen extends Person {
     private $nidn;
-
-    public function __construct($name, $nidn) {
-        parent::__construct($name);
-        $this->nidn = $nidn;
-    }
 
     // Getter dan Setter untuk atribut nidn
     public function getNidn() {
@@ -576,11 +560,6 @@ class Dosen extends Person {
 class Mahasiswa extends Person {
     private $nim;
 
-    public function __construct($name, $nim) {
-        parent::__construct($name);
-        $this->nim = $nim;
-    }
-
     // Getter dan Setter untuk atribut nim
     public function getNim() {
         return $this->nim;
@@ -598,59 +577,52 @@ class Mahasiswa extends Person {
 
 // Kelas abstrak Jurnal
 abstract class Jurnal {
-    protected $judul;
-
-    public function  __construct($judul)
-    {
-        $this->judul = $judul;
-    }
 
     abstract public function Submission();
 }
 
 // Kelas JurnalDosen yang mengimplementasikan Jurnal
 class JurnalDosen extends Jurnal {
-    public function __construct($judul)
-    {
-        parent ::__construct($judul);
-    }
+    
     public function Submission() {
-        return "Pengajuan jurnal dengan judul $this->judul";
+        return "Pengajuan Jurnal dan penilitian Dosen";
     }
 }
 
 // Kelas JurnalMahasiswa yang mengimplementasikan Jurnal
 class JurnalMahasiswa extends Jurnal {
-    public function __construct($judul)
-    {
-        parent ::__construct($judul);
-    }
+   
     public function Submission()
     {
-        return "Pengajuan jurnal dengan judul $this->judul";
+        return "Pengajuan jurnal Mahasiswa";
     }
 }
 
-// Contoh penggunaan
-$dosen1 = new Dosen("Arjuna Cakra", "17386223456");
+$dosen1 = new Dosen();
+$dosen1->setName("Abyan Jaya Prakasa");
+$dosen1->setNidn("252525625");
 echo "Nama Dosen    : " . $dosen1->getName() . "<br>";
 echo "Status    : " . $dosen1->getRole() . "<br>";
 echo "NIP / NIDN    : " . $dosen1->getNidn() . "<br>";
 
-$jurnalDosen1 = new JurnalDosen("Analisa Panjang Lintasan");
+$jurnalDosen1 = new JurnalDosen();
 echo $jurnalDosen1->Submission(). "<br>";
  echo "<br>";
-$mahasiswa1 = new Mahasiswa("Abyan", "20203231001");
+
+$mahasiswa1 = new Mahasiswa();
+$mahasiswa1->setName("Fassha Fanny");
+$mahasiswa1->setNim("2302020235");
 echo "Nama Mahasiswa    : " . $mahasiswa1->getName() . "<br>";
 echo "Status : " . $mahasiswa1->getRole() . "<br>";
 echo "NIM : " . $mahasiswa1->getNim() . "<br>";
 
-$jurnalMahasiswa1 = new JurnalMahasiswa("Analisa Tanah Air");
+$jurnalMahasiswa1 = new JurnalMahasiswa();
 echo $jurnalMahasiswa1->Submission() . "<br>";
 ?>
+
 ```
 
 >Output
 
-![Output 3.tgs](../images/jb3.tgs.png)
+![Output 3.tgs](../images/jbr3.tgs.png)
 
