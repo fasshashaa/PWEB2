@@ -5,12 +5,20 @@
 
    > Membuat kelas Person dengan atribut name dan metode getName().
 
+Potongan Program dibawah memiliki kelas dengan nama Person dan atribut name. Program ini juga memiliki metode yaitu metode getName untuk memanggil atribut name. 
+
    ```PHP
    class Person {
    protected $name;
+
+public function getName() {
+        return $this->name;
+    }
+}
    ```
 
-Membuat function construct untuk menginisialisasi
+Membuat function construct untuk menginisialisasi atau menentukan nilai awal  
+
 
 ```PHP
 public function __construct($name) {
@@ -35,15 +43,10 @@ class student extends Person {
     }
 }
 ```
-> Membuat metode getName()
 
-```PHP
-public function getName() {
-        return $this->name;
-    }
-}
-```
->Instansiasi dan menampilkan data
+>Instansiasi objek dan menampilkan data dengan echo
+
+
 
 ```PHP
 $student = new Student("Fassha Fanny Purwanto", "8374657");
@@ -100,6 +103,8 @@ echo "<br>";
 > Membuat kelas Teacher yang juga mewarisi dari Person dan tambahkan atribut
 teacherID
 
+Potongan program dibawah memiliki kelas turunan dari person yang  ernama class Teacher dengan atribut dan metode class Person yang diturunkan  
+
 ```PHP
 class Teacher extends Person {
     private $teacherID;
@@ -115,6 +120,9 @@ class Teacher extends Person {
 ```
 >Override metode getName() di kelas Student dan Teacher untuk menampilkan
 format berbeda
+
+Override adalah mekanisme untuk menggantikan implementasi metode yang diwarisi dari superclass dalam subclass. Override memungkinkan subclass untuk mengubah atau menambah perilaku metode tanpa mengubah implementasi di superclass.  
+
 
 ```PHP
 public function getName() {
@@ -193,7 +201,8 @@ echo "Teacher ID : ". $teacher1->getTeacherID()."<br>";
    
  > Mengubah atribut name dan studentID dalam kelas Student menjadi private
 
-Mengubah atribut name menjadi private
+Mengubah atribut name menjadi private. Anggota kelas yang dideklarasikan sebagai private hanya dapat diakses dari dalam kelas itu sendiri, tidak dari subclass atau kelas lain.  
+
 
 ```PHP
  public function getNamePrivate() {
@@ -320,7 +329,8 @@ abstract class Course {
 > Buat kelas OnlineCourse dan OfflineCourse yang mengimplementasikan
 getCourseDetails() untuk memberikan detail yang berbeda
 
-Membuat class OnlineCourse  
+Membuat class OnlineCourse yang merupakan subclass atau kelas turunan dari class Course  
+
 
 ```PHP
 class OnlineCourse extends Course {
@@ -337,7 +347,8 @@ private $nama;
 }
 ```
 
-Membuat class OfflineCourse  
+Membuat class OfflineCourse yang merupakan kelas turunan dari class Course  
+
 
 ```PHP
 class OfflineCourse extends Course {
@@ -406,6 +417,9 @@ $offlinecourse1 =  new OfflineCourse("Biola", "Petrof House");
 #### B. Tugas  
 1. Implementasikan kelas Person sebagai induk dari Dosen dan Mahasiswa
 
+   Potongan program dibawah mendefinisikan class person dengan bentuk abstarct yang berperan sebagai kelas induk atau parent untuk kelas dosen dan mahasiswa.
+   
+
 ```PHP
 abstract class Person {
     protected $name;
@@ -420,13 +434,6 @@ abstract class Person {
 Dosen dan Mahasiswa memiliki atribut dan metode yang sesuai dengan perannya
 
 ```PHP
-abstract class Person {
-    protected $name;
-
-    public function __construct($name) {
-        $this->name = $name;
-    }
-
 // Kelas Dosen yang mewarisi dari Person
 class Dosen extends Person {
     private $nidn;
@@ -450,6 +457,9 @@ class Mahasiswa extends Person {
 3. Terapkan Polymorphism dengan membuat metode getRole() di kelas Person dan
 override metode ini di kelas Dosen dan Mahasiswa untuk menampilkan peran yang
 berbeda
+
+Metode getRole berfungsi untuk mengakses nilai dari atribut yang menyimpan informasi tentang peran (role) atau status pengguna (user role) dalam sebuah sistem.  
+
 ```PHP
 abstract public function getRole();
 }
@@ -466,9 +476,15 @@ abstract public function getRole();
 4.  Gunakan Encapsulation untuk melindungi atribut nidn di kelas Dosen dan nim di
 kelas Mahasiswa
 
+Membuat atirbut nidn didalam kelas dosen menjadi private agar hanya bisa diakses dari kelas yang sama  
+
 ```PHP
 class Dosen extends Person {
     private $nidn;
+```
+Membuat atribut nim didalam kelas mahasiswa menjadi private agar hanya bisa diakses dari kelas yang sama.  
+
+```PHP
 class Mahasiswa extends Person {
     private $nim;
 ```
