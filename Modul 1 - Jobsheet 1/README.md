@@ -3,14 +3,17 @@
 1. Membuat Class dan Object  
     _Class_ atau Kelas, adalah blueprint dasar dari pembuatan objek. Atribut dan metode yang ada pada objek akan didefinisikan oleh kelas. Sedangkan  _object_ atau objek, adalah instansiasi dari kelas. Umumnya objek memiliki elemen pelengkap berupa atribut dan metode.
    
-   > Membuat class Mahasiswa dengan atribut nama, nim, dan jurusan  
+   > Membuat class Mahasiswa dengan atribut nama, nim, dan jurusan
+
+Dalam program dibawah ini, class nya bernama Mahasiswa dan atribut nya terdiri dari nama, nim, dan jurusan.
    ``` PHP
    Class Mahasiswa {  
    public $nama;
    public $nim;
    public $jurusan;
    ```
-   Membuat function construct untuk mengembalikan nilai
+   Membuat function construct untuk mengembalikan nilai. Constructor sendiri berfungsi untuk menentukan nilai awal atribut.  
+   
    ```PHP
     public function __construct($nama, $nim, $jurusan){
         $this->nama = $nama;
@@ -20,7 +23,7 @@
    ```
    > Membuat metode tampilkanData()
    
-   Metode ini digunakan untuk memanggil atribut dan menampilkannya.
+   Metode ini digunakan untuk memanggil atribut dan menampilkannya nanti.
    
    ```PHP
    function tampilkanData(){
@@ -31,7 +34,7 @@
 
 > Instansiasi objek dari class Mahasiswa dan tampilkan data mahasiswa tersebut.
 
-Instansiasi adalah cara untuk menghasilkan sebuah entitas konkrit berdasarkan blueprint (kelas) yang sudah ada.  
+Instansiasi adalah cara untuk menghasilkan sebuah entitas konkrit berdasarkan blueprint (kelas) yang sudah ada atau sebuah proses membuat objek baru. Dalam program dibawah, untuk menampilkan output menggunakan perintah echo.  
 
 ```PHP
 $mhs1 = new Mahasiswa ("Fassha Fanny Purwanto", "230202035", "Komputer dan Bisnis");
@@ -78,6 +81,8 @@ echo $mhs1->tampilkanData();
 
    > Ubah atribut dalam class Mahasiswa menjadi private.
 
+Potongan kode dibawah memiliki nama class Mahasiswa dan atribut nama, nim dan jurusan dengan modifikator akses private.
+
    ```PHP
    class Mahasiswa{
     private $nama;
@@ -85,7 +90,7 @@ echo $mhs1->tampilkanData();
     private $jurusan;
    ```
 
-Membuat function construct untuk inisialisasi  
+Membuat function construct untuk inisialisasi atau menentukan nilai awal.
 
 ```PHP
 public function __construct($nama, $nim, $jurusan)
@@ -283,6 +288,9 @@ class Pengguna
 > Membuat class Dosen yang mewarisi class Pengguna dan tambahkan atribut
 mataKuliah
 
+Potongan program dibawah menunjukan class dosen yang mewarisi atribut dan method dari class pengguna  
+
+
 ```PHP
 class Dosen extends Pengguna
 {
@@ -380,6 +388,9 @@ echo "Mata Kuliah : " . $dosen1->getMataKuliah();
 _Polymorphism_ atau Polimorfisme, adalah konsep kelas yang bertujuan untuk mempermudah implementasi program dengan cara menggunakan objek dari kelas yang berbeda tetapi menggunakan metode yang sama namun hasil implementasi nya berbeda.  
 
 > Membuat class Pengguna dengan metode aksesFitur().
+
+Potongan program dibawah memiliki nama class pengguna dengan metode aksesFitur()  
+
 
 ```PHP
 class Pengguna
@@ -512,6 +523,8 @@ echo "Fitur Dosen   : " . $dosen->aksesFitur() . "<br>";
 _Abstraction_ atau abstraksi adalah konsep yang memiliki fungsi untuk menyederhanakan kode dengan cara menyembunyikan detail yang tidak perlu  
 
 >Membuat class abstrak Pengguna dengan metode abstrak aksesFitur()
+
+Potongan kode program dibawah memiliki kelas abstract dengan nama Pengguna dan metode aksesFitur yang berbentuk abstract juga.  
 
 ```PHP
 // Membuat class abstrak Pengguna
