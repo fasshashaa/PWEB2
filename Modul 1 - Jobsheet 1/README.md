@@ -12,15 +12,7 @@ Dalam program dibawah ini, class nya bernama Mahasiswa dan atribut nya terdiri d
    public $nim;
    public $jurusan;
    ```
-   Membuat function construct untuk mengembalikan nilai. Constructor sendiri berfungsi untuk menentukan nilai awal atribut.  
    
-   ```PHP
-    public function __construct($nama, $nim, $jurusan){
-        $this->nama = $nama;
-        $this->nim = $nim;
-        $this->jurusan = $jurusan;
-    }
-   ```
    > Membuat metode tampilkanData()
    
    Metode ini digunakan untuk memanggil atribut dan menampilkannya nanti.
@@ -37,8 +29,12 @@ Dalam program dibawah ini, class nya bernama Mahasiswa dan atribut nya terdiri d
 Instansiasi adalah cara untuk menghasilkan sebuah entitas konkrit berdasarkan blueprint (kelas) yang sudah ada atau sebuah proses membuat objek baru. Dalam program dibawah, untuk menampilkan output menggunakan perintah echo.  
 
 ```PHP
-$mhs1 = new Mahasiswa ("Fassha Fanny Purwanto", "230202035", "Komputer dan Bisnis");
-echo $mhs1->tampilkanData();
+$mhs1 = new Mahasiswa ();
+echo $mhs1->nama = "Fassha Fanny Purwanto"; 
+echo "<br>";
+echo $mhs1->nim = "230202035";
+echo "<br>";
+echo $mhs1->jurusan = "Komputer dan Bisnis";
 ```
 > Full kode program
 ```PHP
@@ -56,20 +52,18 @@ class Mahasiswa {
     public $nim;
     public $jurusan;
 
-// Membuat construct
-    public function __construct($nama, $nim, $jurusan){
-        $this->nama = $nama;
-        $this->nim = $nim;
-        $this->jurusan = $jurusan;
-    }
     //Membuat function tampilkanData()
     public function tampilkanData(){
         return "Nama : $this->nama <br> NIM : $this->nim <br> Jurusan : $this->jurusan";
     }
 }
 //Instansiasi Objek
-$mhs1 = new Mahasiswa ("Fassha Fanny Purwanto", "230202035", "Komputer dan Bisnis");
-echo $mhs1->tampilkanData();
+$mhs1 = new Mahasiswa ();
+echo $mhs1->nama = "Fassha Fanny Purwanto"; 
+echo "<br>";
+echo $mhs1->nim = "230202035";
+echo "<br>";
+echo $mhs1->jurusan = "Komputer dan Bisnis";
 ?>
 ```
 > Output
@@ -89,17 +83,6 @@ Potongan kode dibawah memiliki nama class Mahasiswa dan atribut nama, nim dan ju
     private $nim;
     private $jurusan;
    ```
-
-Membuat function construct untuk inisialisasi atau menentukan nilai awal.
-
-```PHP
-public function __construct($nama, $nim, $jurusan)
-    {
-        $this->nama = $nama;
-        $this->nim = $nim;
-        $this->jurusan = $jurusan;
-    }
-```
 
 >  Membuat metode getter dan setter untuk atribut nama, nim, dan jurusan
 
@@ -132,21 +115,7 @@ $this->jurusan = $jurusan;
 
 ```PHP
 // Instansiasi Objek
-$mhs1 = new Mahasiswa("Senantha", "230202035", "Komputer dan Bisnis");
-
-echo "Menampilkan data menggunakan getter";
-echo "<br>";
-
-// Mengakses data menggunakan metode getter
-echo $mhs1->getNama();
-echo "<br>";
-echo $mhs1->getNim();
-echo "<br>";
-echo $mhs1->getJurusan();
-echo "<br><br>";
-
-echo "Menampilkan data setelah menggunakan setter";
-echo "<br>";
+$mhs1 = new Mahasiswa();
 
 // Mengubah data menggunakan metode setter
 $mhs1->setNama("Fassha Fanny");
@@ -178,14 +147,6 @@ class Mahasiswa
     private $nama;
     private $nim;
     private $jurusan;
-
-    // Constructor
-    public function __construct($nama, $nim, $jurusan)
-    {
-        $this->nama = $nama;
-        $this->nim = $nim;
-        $this->jurusan = $jurusan;
-    }
 
     // Method Getter untuk nama
     public function getNama()
@@ -225,21 +186,7 @@ class Mahasiswa
 }
 
 // Instansiasi Objek
-$mhs1 = new Mahasiswa("Senantha", "230202035", "Komputer dan Bisnis");
-
-echo "Menampilkan data menggunakan getter";
-echo "<br>";
-
-// Mengakses data menggunakan metode getter
-echo $mhs1->getNama();
-echo "<br>";
-echo $mhs1->getNim();
-echo "<br>";
-echo $mhs1->getJurusan();
-echo "<br><br>";
-
-echo "Menampilkan data setelah menggunakan setter";
-echo "<br>";
+$mhs1 = new Mahasiswa();
 
 // Mengubah data menggunakan metode setter
 $mhs1->setNama("Fassha Fanny");
@@ -252,7 +199,10 @@ echo "<br>";
 echo $mhs1->getNim();
 echo "<br>";
 echo $mhs1->getJurusan();
+?>
 ```
+
+
 
 > Output
 
@@ -270,13 +220,7 @@ class Pengguna
 {
 
     //Atribut
-    protected $nama;
-
-    // Function construct
-    public function __construct($nama)
-    {
-        $this->nama = $nama;
-    }
+    public $nama;
 
     // Method untuk getNama
     public function getNama()
@@ -294,15 +238,7 @@ Potongan program dibawah menunjukan class dosen yang mewarisi atribut dan method
 ```PHP
 class Dosen extends Pengguna
 {
-    private $mataKuliah;
-
-    // Function construct
-    public function __construct($nama, $mataKuliah)
-    {
-        // Memanggil constructor dari class 'orang tua'
-        parent::__construct($nama);
-        $this->mataKuliah = $mataKuliah;
-    }
+    public $mataKuliah;
 
     // Method Getter untuk mataKuliah
     public function getMataKuliah()
@@ -315,11 +251,14 @@ class Dosen extends Pengguna
 
 ```PHP
 // Instansiasi objek dari class Dosen
-$dosen1 = new Dosen("Ami Riyanti", "PWEB 3");
+$dosen1 = new Dosen();
+$dosen1 -> nama = "Amy Riyanti";
+$dosen1 -> mataKuliah = "P-WEB 2";
 
 // Menampilkan data dosen
 echo "Nama Dosen  : " . $dosen1->getNama() . "<br>";
 echo "Mata Kuliah : " . $dosen1->getMataKuliah();
+
 ```
 
 >Full Kode Program
@@ -336,13 +275,7 @@ class Pengguna
 {
 
     //Atribut
-    protected $nama;
-
-    // Function construct
-    public function __construct($nama)
-    {
-        $this->nama = $nama;
-    }
+    public $nama;
 
     // Method untuk getNama
     public function getNama()
@@ -354,15 +287,7 @@ class Pengguna
 // Membuat class Dosen yang mewarisi Pengguna
 class Dosen extends Pengguna
 {
-    private $mataKuliah;
-
-    // Function construct
-    public function __construct($nama, $mataKuliah)
-    {
-        // Memanggil constructor dari class 'orang tua'
-        parent::__construct($nama);
-        $this->mataKuliah = $mataKuliah;
-    }
+    public $mataKuliah;
 
     // Method Getter untuk mataKuliah
     public function getMataKuliah()
@@ -372,11 +297,14 @@ class Dosen extends Pengguna
 }
 
 // Instansiasi objek dari class Dosen
-$dosen1 = new Dosen("Ami Riyanti", "PWEB 3");
+$dosen1 = new Dosen();
+$dosen1 -> nama = "Amy Riyanti";
+$dosen1 -> mataKuliah = "P-WEB 2";
 
 // Menampilkan data dosen
 echo "Nama Dosen  : " . $dosen1->getNama() . "<br>";
 echo "Mata Kuliah : " . $dosen1->getMataKuliah();
+
 ```
 
 >Output
@@ -395,8 +323,6 @@ Potongan program dibawah memiliki nama class pengguna dengan metode aksesFitur()
 ```PHP
 class Pengguna
 {
-    //Function Construct
-    public function __construct() {}
 
     // Method aksesFitur 
     public function aksesFitur()
@@ -413,7 +339,6 @@ Mengimplementasikan metode aksesFitur di kelas Dosen
 ```PHP
 class Dosen extends Pengguna
 {
-    public function __construct() {}
 
     //Method aksesFitur() pada class Dosen
     public function aksesFitur()
@@ -427,8 +352,6 @@ Mengimplementasikan metode aksesFitur di kelas Mahasiswa
 ```PHP
 class Mahasiswa extends Pengguna
 {
-
-    public function __construct() {}
 
     // Method aksesFitur pada class Mahasiswa
     public function aksesFitur()
@@ -450,6 +373,7 @@ $pengguna = new pengguna();
 echo $pengguna ->aksesFitur() ."<br>";
 echo "Fitur Mahasiswa   : " . $mahasiswa->aksesFitur() . "<br>";
 echo "Fitur Dosen   : " . $dosen->aksesFitur() . "<br>";
+
 ```
 
 >Full Kode Program
@@ -465,11 +389,6 @@ echo "Fitur Dosen   : " . $dosen->aksesFitur() . "<br>";
 // Membuat class Pengguna
 class Pengguna
 {
-    //Function Construct
-    public function __construct() {
-        
-    }
-
     // Method aksesFitur 
     public function aksesFitur()
     {
@@ -480,8 +399,7 @@ class Pengguna
 // Membuat class Dosen yang mewarisi Pengguna
 class Dosen extends Pengguna
 {
-    public function __construct() {}
-
+   
     //Method aksesFitur() pada class Dosen
     public function aksesFitur()
     {
@@ -492,8 +410,6 @@ class Dosen extends Pengguna
 // Membuat class Mahasiswa yang mewarisi Pengguna
 class Mahasiswa extends Pengguna
 {
-
-    public function __construct() {}
 
     // Method aksesFitur pada class Mahasiswa
     public function aksesFitur()
@@ -511,6 +427,7 @@ $pengguna = new pengguna();
 echo $pengguna ->aksesFitur() ."<br>";
 echo "Fitur Mahasiswa   : " . $mahasiswa->aksesFitur() . "<br>";
 echo "Fitur Dosen   : " . $dosen->aksesFitur() . "<br>";
+
 ```
 
 
@@ -530,8 +447,6 @@ Potongan kode program dibawah memiliki kelas abstract dengan nama Pengguna dan m
 // Membuat class abstrak Pengguna
 abstract class Pengguna
 {
-    public function __construct() {}
-
     //absract method aksesFitur
     abstract public function aksesFitur();
 }
@@ -544,9 +459,6 @@ Kelas Dosen yang mengimplementasikan metode absract aksesFitur
 ```PHP
 class Dosen extends Pengguna
 {
-
-    public function __construct() {}
-
     // method aksesFitur pada kelas Dosen
     public function aksesFitur()
     {
@@ -558,9 +470,6 @@ Kelas Mahasiswa yang mengimplementasikan metode abstract aksesFitur
 ```PHP
 class Mahasiswa extends Pengguna
 {
-
-
-    public function __construct() {}
 
     // method aksesFitur pada kelas Mahasiswa
     public function aksesFitur()
@@ -581,6 +490,7 @@ $dosen = new Dosen();
 // Memanggil metode aksesFitur()
 echo "Fitur Mahasiswa: " . $mahasiswa->aksesFitur() . "<br>";
 echo "Fitur Dosen: " . $dosen->aksesFitur() . "<br>";
+
 ```
 >Full Kode Program
 
@@ -594,7 +504,6 @@ echo "Fitur Dosen: " . $dosen->aksesFitur() . "<br>";
 // Membuat class abstrak Pengguna
 abstract class Pengguna
 {
-    public function __construct() {}
 
     //absract method aksesFitur
     abstract public function aksesFitur();
@@ -604,7 +513,6 @@ abstract class Pengguna
 class Dosen extends Pengguna
 {
 
-    public function __construct() {}
 
     // method aksesFitur pada kelas Dosen
     public function aksesFitur()
@@ -616,9 +524,6 @@ class Dosen extends Pengguna
 // Membuat class Mahasiswa yang mewarisi Pengguna
 class Mahasiswa extends Pengguna
 {
-
-
-    public function __construct() {}
 
     // method aksesFitur pada kelas Mahasiswa
     public function aksesFitur()
@@ -635,7 +540,7 @@ $dosen = new Dosen();
 // Memanggil metode aksesFitur()
 echo "Fitur Mahasiswa: " . $mahasiswa->aksesFitur() . "<br>";
 echo "Fitur Dosen: " . $dosen->aksesFitur() . "<br>";
-?>
+
 ```
 
 
