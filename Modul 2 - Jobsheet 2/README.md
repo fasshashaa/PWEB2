@@ -4,7 +4,7 @@
 1. Membuat Class dan Object
 > Membuat class Mahasiswa yang memiliki atribut nama, nim, dan jurusan
 
-Potongan program dibawah menunjukan sebuah class yang memiliki atribut nama, nim, dan jurusan.  
+##### Potongan program dibawah menunjukan sebuah class yang memiliki atribut nama, nim, dan jurusan.  
 
 
 ```PHP
@@ -16,7 +16,7 @@ class Mahasiswa {
 
 > Membuat metode tampilkanData() dalam class Mahasiswa
 
-Metode ini yang nantinya akan dipakai untuk menampilkan atau memanggil output program  
+##### Metode ini yang nantinya akan dipakai untuk menampilkan atau memanggil output program  
 
 ```PHP
  public function tampilkanData() {
@@ -36,7 +36,7 @@ $mhs1= new Mahasiswa("Abyan Jaya", "2302443035", "Multimedia");
 > Tambahkan constructor pada kelas Mahasiswa yang akan menginisialisasi
 atribut nama, nim, dan jurusan
 
-Membuat Construct untuk inisialisasi atau menentukan nilai awal  
+##### Membuat Construct untuk inisialisasi atau menentukan nilai awal  
 
 
 ```PHP
@@ -51,7 +51,7 @@ public function __construct($nama, $nim, $jurusan) {
 > Buat metode updateJurusan() dalam kelas Mahasiswa yang memungkinkan
 perubahan jurusan
 
-Metode updateJurusan() akan berperan dalam melakukan perubahan data jurusan didalam class Mahasiswa  
+##### Metode updateJurusan() akan berperan dalam melakukan perubahan data jurusan didalam class Mahasiswa  
 
 ```PHP
  public function updateJurusan($jurusan2) {
@@ -62,7 +62,7 @@ Metode updateJurusan() akan berperan dalam melakukan perubahan data jurusan dida
 
 > Ubah nilai atribut nim dari objek Mahasiswa menggunakan metode setter
 
-Setter adalah metode yang digunakan untuk mengatur atau memperbarui nilai atribut privat atau terlindungi dalam sebuah kelas.  
+##### Setter adalah metode yang digunakan untuk mengatur atau memperbarui nilai atribut privat atau terlindungi dalam sebuah kelas.  
 
 ```PHP
 public function setNim($nim2) {
@@ -154,7 +154,7 @@ echo $mhs1->tampilkanData();
 
 > Implementasikan kelas Dosen dengan atribut nama, nip, dan mataKuliah
 
-Potongan program dibawah menampilkan class Dosen dengan atribut nama, nip, dan mataKuliah dengan modifikator akses public.
+##### Potongan program dibawah menampilkan class Dosen dengan atribut nama, nip, dan mataKuliah dengan modifikator akses public.
 ```PHP
 class Dosen {
     //atribut dosen
@@ -176,7 +176,7 @@ public function tampilkanDosen(){
 menampilkan informasi tersebut
 
 
-Objek kelas dosen di implementasikan dengan dsn1 dan untuk menampilkan informasi menggunakan metode tampilkanDosen dengan perintah echo.
+##### Objek kelas dosen di implementasikan dengan dsn1 dan untuk menampilkan informasi menggunakan metode tampilkanDosen dengan perintah echo.
 
 
 ```PHP
