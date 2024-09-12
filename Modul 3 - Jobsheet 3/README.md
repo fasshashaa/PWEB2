@@ -5,7 +5,7 @@
 
    > Membuat kelas Person dengan atribut name dan metode getName().
 
-Potongan Program dibawah memiliki kelas dengan nama Person dan atribut name. Program ini juga memiliki metode yaitu metode getName untuk memanggil atribut name. 
+##### Potongan Program dibawah memiliki kelas dengan nama Person dan atribut name. Program ini juga memiliki metode yaitu metode getName untuk memanggil atribut name. 
 
    ```PHP
    class Person {
@@ -83,7 +83,7 @@ echo "<br>";
 > Membuat kelas Teacher yang juga mewarisi dari Person dan tambahkan atribut
 teacherID
 
-Potongan program dibawah memiliki kelas turunan dari person yang  bernama class Teacher dengan atribut dan metode class Person yang diturunkan  
+##### Potongan program dibawah memiliki kelas turunan dari person yang  bernama class Teacher dengan atribut dan metode class Person yang diturunkan  
 
 ```PHP
 class Teacher extends Person {
@@ -96,7 +96,7 @@ class Teacher extends Person {
 >Override metode getName() di kelas Student dan Teacher untuk menampilkan
 format berbeda
 
-Override adalah mekanisme untuk menggantikan implementasi metode yang diwarisi dari superclass dalam subclass. Override memungkinkan subclass untuk mengubah atau menambah perilaku metode tanpa mengubah implementasi di superclass.  
+##### Override adalah mekanisme untuk menggantikan implementasi metode yang diwarisi dari superclass dalam subclass. Override memungkinkan subclass untuk mengubah atau menambah perilaku metode tanpa mengubah implementasi di superclass.  
 
 
 ```PHP
@@ -171,7 +171,7 @@ echo "Teacher ID : ". $teacher1->teacherID = "230209007". "<br>";
    
  > Mengubah atribut name dan studentID dalam kelas Student menjadi private
 
-Mengubah atribut name menjadi private. Anggota kelas yang dideklarasikan sebagai private hanya dapat diakses dari dalam kelas itu sendiri, tidak dari subclass atau kelas lain.  
+##### Mengubah atribut name menjadi private. Anggota kelas yang dideklarasikan sebagai private hanya dapat diakses dari dalam kelas itu sendiri, tidak dari subclass atau kelas lain.  
 
 
 ```PHP
@@ -189,7 +189,7 @@ public function getStudentIDPrivate() {
 >Tambahkan metode setter dan getter untuk mengakses dan mengubah nilai
 atribut name dan studentID
 
-Membuat metode setter untuk mengubah nilai  
+##### Membuat metode setter untuk mengubah nilai  
 
 ```PHP
  public function setName($name) {
@@ -200,7 +200,7 @@ public function setStudentID($studentID) {
     }
 ```
 
-Membuat metode getter untuk mengakses nilai  
+##### Membuat metode getter untuk mengakses nilai  
 
 ```PHP
  public function getStudentID() {
@@ -292,7 +292,7 @@ abstract class Course {
 > Buat kelas OnlineCourse dan OfflineCourse yang mengimplementasikan
 getCourseDetails() untuk memberikan detail yang berbeda
 
-Membuat class OnlineCourse yang merupakan subclass atau kelas turunan dari class Course  
+##### Membuat class OnlineCourse yang merupakan subclass atau kelas turunan dari class Course  
 
 
 ```PHP
@@ -313,7 +313,7 @@ private $nama;
 
 ```
 
-Membuat class OfflineCourse yang merupakan kelas turunan dari class Course  
+##### Membuat class OfflineCourse yang merupakan kelas turunan dari class Course  
 
 
 ```PHP
@@ -406,7 +406,7 @@ echo $offlinecourse1->getCourseDetails();
 #### B. Tugas  
 1. Implementasikan kelas Person sebagai induk dari Dosen dan Mahasiswa
 
-   Potongan program dibawah mendefinisikan class person dengan bentuk abstarct yang berperan sebagai kelas induk atau parent untuk kelas dosen dan mahasiswa.
+  ##### Potongan program dibawah mendefinisikan class person dengan bentuk abstarct yang berperan sebagai kelas induk atau parent untuk kelas dosen dan mahasiswa.
    
 
 ```PHP
@@ -459,7 +459,7 @@ class Mahasiswa extends Person {
 override metode ini di kelas Dosen dan Mahasiswa untuk menampilkan peran yang
 berbeda
 
-Metode getRole berfungsi untuk mengakses nilai dari atribut yang menyimpan informasi tentang peran (role) atau status pengguna (user role) dalam sebuah sistem.  
+##### Metode getRole berfungsi untuk mengakses nilai dari atribut yang menyimpan informasi tentang peran (role) atau status pengguna (user role) dalam sebuah sistem.  
 
 ```PHP
 abstract public function getRole();
@@ -477,7 +477,7 @@ abstract public function getRole();
 4.  Gunakan Encapsulation untuk melindungi atribut nidn di kelas Dosen dan nim di
 kelas Mahasiswa
 
-Membuat atirbut nidn didalam kelas dosen menjadi private agar hanya bisa diakses dari kelas yang sama  
+##### Membuat atirbut nidn didalam kelas dosen menjadi private agar hanya bisa diakses dari kelas yang sama  
 
 ```PHP
 class Dosen extends Person {
