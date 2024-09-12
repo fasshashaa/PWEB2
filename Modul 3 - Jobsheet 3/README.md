@@ -6,7 +6,7 @@
    > Membuat kelas Person dengan atribut name dan metode getName().
 
 ##### Potongan Program dibawah memiliki kelas dengan nama Person dan atribut name. Program ini juga memiliki metode yaitu metode getName untuk memanggil atribut name. 
-
+ 
    ```PHP
    class Person {
    public $name;
