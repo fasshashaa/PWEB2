@@ -1,7 +1,7 @@
 ## MODUL 1 
 ### Jobsheet 1 : Implementasi Prinsip OOP dalam PHP
-1. Membuat Class dan Object  
-    _Class_ atau Kelas, adalah blueprint dasar dari pembuatan objek. Atribut dan metode yang ada pada objek akan didefinisikan oleh kelas. Sedangkan  _object_ atau objek, adalah instansiasi dari kelas. Umumnya objek memiliki elemen pelengkap berupa atribut dan metode.
+1. Membuat Class dan Object
+    ##### _Class_ atau Kelas, adalah blueprint dasar dari pembuatan objek. Atribut dan metode yang ada pada objek akan didefinisikan oleh kelas. Sedangkan  _object_ atau objek, adalah instansiasi dari kelas. Umumnya objek memiliki elemen pelengkap berupa atribut dan metode.
    
    > Membuat class Mahasiswa dengan atribut nama, nim, dan jurusan
 
@@ -12,6 +12,9 @@ Dalam program dibawah ini, class nya bernama Mahasiswa dan atribut nya terdiri d
    public $nim;
    public $jurusan;
    ```
+##### *Atribut* (atau sering disebut juga sebagai properties atau fields) adalah variabel yang dideklarasikan di dalam sebuah kelas. Atribut menyimpan data atau status tentang objek yang diwakili oleh kelas tersebut.
+
+  
    
    > Membuat metode tampilkanData()
    
@@ -23,10 +26,11 @@ Dalam program dibawah ini, class nya bernama Mahasiswa dan atribut nya terdiri d
     }
    }
    ```
+##### *Metode* adalah fungsi yang dideklarasikan di dalam kelas dan digunakan untuk mendefinisikan perilaku objek dari kelas tersebut. Metode dapat mengakses dan memanipulasi atribut objek serta melakukan operasi lainnya.
 
 > Instansiasi objek dari class Mahasiswa dan tampilkan data mahasiswa tersebut.
 
-Instansiasi adalah cara untuk menghasilkan sebuah entitas konkrit berdasarkan blueprint (kelas) yang sudah ada atau sebuah proses membuat objek baru. Dalam program dibawah, untuk menampilkan output menggunakan perintah echo.  
+##### Instansiasi adalah cara untuk menghasilkan sebuah entitas konkrit berdasarkan blueprint (kelas) yang sudah ada atau sebuah proses membuat objek baru. Dalam program dibawah, untuk menampilkan output menggunakan perintah echo.  
 
 ```PHP
 $mhs1 = new Mahasiswa ();
@@ -71,7 +75,7 @@ echo $mhs1->jurusan = "Komputer dan Bisnis";
 ![Ouput 1.1](../images/jbr1.1.png)  
 
 2. Encapsulation  
-   _Encapsulation_ atau enkapsulasi, adalah konsep yang memiliki fungsi untuk membungkus data dan metode. Enkapsulasi juga bertujuan untuk menyembunyikan detail implementasi.
+ #####  _Encapsulation_ atau enkapsulasi, adalah konsep yang memiliki fungsi untuk membungkus data dan metode. Enkapsulasi juga bertujuan untuk menyembunyikan detail implementasi.
 
    > Ubah atribut dalam class Mahasiswa menjadi private.
 
@@ -86,7 +90,7 @@ Potongan kode dibawah memiliki nama class Mahasiswa dan atribut nama, nim dan ju
 
 >  Membuat metode getter dan setter untuk atribut nama, nim, dan jurusan
 
-Getter adalah metode yang digunakan untuk mengambil nilai dari atribut private. Biasanya, getter memberikan akses hanya-baca (read-only) ke atribut dari luar kelas.
+##### Getter adalah metode yang digunakan untuk mengambil nilai dari atribut private. Biasanya, getter memberikan akses hanya-baca (read-only) ke atribut dari luar kelas.
     
  ```PHP
 public function getNama() {
@@ -99,7 +103,7 @@ public function getJurusan() {
 return "Jurusan    : $this->jurusan";
 }
 ```
-Setter adalah metode yang digunakan untuk memodifikasi nilai dari atribut private. Setter memungkinkan akses tulis (write) ke atribut dari luar kelas dengan memberikan validasi atau aturan khusus jika diperlukan.  
+##### Setter adalah metode yang digunakan untuk memodifikasi nilai dari atribut private. Setter memungkinkan akses tulis (write) ke atribut dari luar kelas dengan memberikan validasi atau aturan khusus jika diperlukan.  
 ```PHP
 public function setNama($nama) {
 $this->nama = $nama;
@@ -210,7 +214,7 @@ echo $mhs1->getJurusan();
 
 3. Inheritance
    
- _Inheritance_ atau pewarisan, adalah konsep dimana implementasinya adalah dengan adanya kelas baru yang dibuat dengan mewarisi atribut dan metode dari kelas _parent_ nya.
+##### _Inheritance_ atau pewarisan, adalah konsep dimana implementasinya adalah dengan adanya kelas baru yang dibuat dengan mewarisi atribut dan metode dari kelas _parent_ nya.
 
 > Membuat class Pengguna dengan atribut nama dan metode getNama()
 
@@ -313,7 +317,7 @@ echo "Mata Kuliah : " . $dosen1->getMataKuliah();
 
 4. Polymorphism
 
-_Polymorphism_ atau Polimorfisme, adalah konsep kelas yang bertujuan untuk mempermudah implementasi program dengan cara menggunakan objek dari kelas yang berbeda tetapi menggunakan metode yang sama namun hasil implementasi nya berbeda.  
+##### _Polymorphism_ atau Polimorfisme, adalah konsep kelas yang bertujuan untuk mempermudah implementasi program dengan cara menggunakan objek dari kelas yang berbeda tetapi menggunakan metode yang sama namun hasil implementasi nya berbeda.  
 
 > Membuat class Pengguna dengan metode aksesFitur().
 
@@ -437,7 +441,7 @@ echo "Fitur Dosen   : " . $dosen->aksesFitur() . "<br>";
 
 5. Abstraction
 
-_Abstraction_ atau abstraksi adalah konsep yang memiliki fungsi untuk menyederhanakan kode dengan cara menyembunyikan detail yang tidak perlu  
+##### _Abstraction_ atau abstraksi adalah konsep yang memiliki fungsi untuk menyederhanakan kode dengan cara menyembunyikan detail yang tidak perlu  
 
 >Membuat class abstrak Pengguna dengan metode abstrak aksesFitur()
 
